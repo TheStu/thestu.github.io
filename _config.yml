@@ -1,5 +1,5 @@
 # Dependencies
-markdown:         redcarpet
+markdown:         kramdown
 highlighter:      rouge
 
 # Permalinks
@@ -11,7 +11,6 @@ tagline:          'A Homepage'
 description:      "Vancouver, BC based web developer. Want to hire me? Check out my work below."
 url:              http://thestu.github.io
 baseurl:          /
-
 author:
   name:           'Mark Otto'
   url:            https://twitter.com/mdo

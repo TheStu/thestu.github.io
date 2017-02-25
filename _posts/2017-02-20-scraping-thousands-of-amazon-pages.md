@@ -15,19 +15,19 @@ Mechanize also gets met with Amazon's main line of defense against scraping, whi
 
 So out with Mechanize, and in with something that looks more like an actual browser. I tried a few different options before settling on a combination of [Capybara](https://github.com/teamcapybara/capybara) / [Poltergeist](https://github.com/teampoltergeist/poltergeist).
 
-```ruby
+{% highlight ruby %}
 session = Capybara::Session.new(:poltergeist)
 session.driver.add_headers("User-Agent" => "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.98 Safari/537.36")
 session.visit('http://amazon.com')
-```
+{% endhighlight %}
 
 This duo solved the Captcha challenge problem, but I was planning on running this on Heroku, and Poltergeist requires a headless browser to be installed (Firefox generally, but there's a Chrome version available too). But installing something like that is problematic on Heroku.
 
 After searching around for awhile, I found an alternative to the headless browser - [PhantomJS](https://github.com/stomita/heroku-buildpack-phantomjs). The PhantomJS can be added to Heroku, and once installed, will run Poltergeist.
 
-```
+{% highlight terminal %}
 heroku buildpacks:add --index 2 https://github.com/stomita/heroku-buildpack-phantomjs
-```
+{% endhighlight %}
 
 The index 2 flag tells Heroku that you want this buildpack to be run after the buildpack that runs your app. In my case I'm using the heroku/ruby buildpack to run a Rails app.
 
