@@ -3,35 +3,212 @@ layout: default
 title: Home
 ---
 
-<div class="posts">
-  {% for post in paginator.posts %}
-  <div class="post">
-    <h1 class="post-title">
-      <a href="{{ post.url }}">
-        {{ post.title }}
-      </a>
-    </h1>
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+      </button>
+      <a class="navbar-brand page-scroll" href="#page-top">Sitka Digital</a>
+    </div>
 
-    <span class="post-date">{{ post.date | date_to_string }}</span>
-
-    {{ post.content }}
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+<!--         <li>
+          <a class="page-scroll" href="#about">About</a>
+        </li> -->
+        <li>
+          <a class="page-scroll" href="#services">Services</a>
+        </li>
+        <li>
+          <a class="page-scroll" href="#portfolio">Portfolio</a>
+        </li>
+        <li>
+          <a class="page-scroll" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
   </div>
-  {% endfor %}
-</div>
+  <!-- /.container-fluid -->
+</nav>
 
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ site.baseurl }}page{{paginator.next_page}}">Older</a>
-  {% else %}
-    <span class="pagination-item older">Older</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}">Newer</a>
-    {% else %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}page{{paginator.previous_page}}">Newer</a>
-    {% endif %}
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
-  {% endif %}
-</div>
+<header>
+  <div class="header-content">
+    <div class="header-content-inner">
+      <h1 id="homeHeading">We Build Your Needs</h1>
+      <hr>
+      <p>Sitka Digital is a web design agency headquartered in Vancouver, BC. We pride ourselves on converting business goals in to fast, secure and engaging web apps and websites.</p>
+      <a href="#services" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
+    </div>
+  </div>
+</header>
+
+<!-- <section class="bg-primary" id="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 text-center">
+        <h2 class="section-heading">We've got what you need!</h2>
+        <hr class="light">
+        <p class="text-faded">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
+        <a href="#services" class="page-scroll btn btn-default btn-xl sr-button">Get Started!</a>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<section id="services">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading">At Your Service</h2>
+        <hr class="primary">
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 text-center">
+        <div class="service-box">
+          <img src="{{ site.baseurl }}public/img/ecommerce.png" alt="">
+          <h3>E-commerce Platforms</h3>
+          <p class="text-muted">Get a tightly focused sales funnel that can handle millions in revenue every month, and connect you to your customers.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 text-center">
+        <div class="service-box">
+          <img src="{{ site.baseurl }}public/img/design.png" alt="">
+          <h3>Responsive Design</h3>
+          <p class="text-muted">We use forward thinking responsive design techniques and technology to make sure your site looks good on any screen.</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 text-center">
+        <div class="service-box">
+          <img src="{{ site.baseurl }}public/img/code.png" alt="">
+          <h3>Web Applications</h3>
+          <p class="text-muted">Our team can deliver a custom web application that is secure, fast, and capable of handling millions of requests per day.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="no-padding" id="portfolio">
+  <div class="container-fluid">
+    <div class="row no-gutter popup-gallery">
+      <div class="col-lg-4">
+        <a href="{{ site.baseurl }}public/img/portfolio/fullsize/bookraid_responsive.jpg" class="portfolio-box">
+          <img src="{{ site.baseurl }}public/img/portfolio/thumbnails/bookraid.jpg" class="img-responsive" alt="">
+          <div class="portfolio-box-caption">
+            <div class="portfolio-box-caption-content">
+              <div class="project-name">
+                Book Raid
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-4">
+        <a href="{{ site.baseurl }}public/img/portfolio/fullsize/newsletter_swap_responsive.jpg" class="portfolio-box">
+          <img src="{{ site.baseurl }}public/img/portfolio/thumbnails/newsletter_swap.jpg" class="img-responsive" alt="">
+          <div class="portfolio-box-caption">
+            <div class="portfolio-box-caption-content">
+              <div class="project-name">
+                Newsletter Swap
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-4">
+        <a href="{{ site.baseurl }}public/img/portfolio/fullsize/bestseller_formula_responsive.jpg" class="portfolio-box">
+          <img src="{{ site.baseurl }}public/img/portfolio/thumbnails/bestseller_formula.jpg" class="img-responsive" alt="">
+          <div class="portfolio-box-caption">
+            <div class="portfolio-box-caption-content">
+              <div class="project-name">
+                Bestseller Formula
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <!-- <div class="col-lg-4 col-sm-6">
+        <a href="{{ site.baseurl }}public/img/portfolio/fullsize/4.jpg" class="portfolio-box">
+          <img src="{{ site.baseurl }}public/img/portfolio/thumbnails/4.jpg" class="img-responsive" alt="">
+          <div class="portfolio-box-caption">
+            <div class="portfolio-box-caption-content">
+              <div class="project-category text-faded">
+                Category
+              </div>
+              <div class="project-name">
+                Project Name
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <a href="{{ site.baseurl }}public/img/portfolio/fullsize/5.jpg" class="portfolio-box">
+          <img src="{{ site.baseurl }}public/img/portfolio/thumbnails/5.jpg" class="img-responsive" alt="">
+          <div class="portfolio-box-caption">
+            <div class="portfolio-box-caption-content">
+              <div class="project-category text-faded">
+                Category
+              </div>
+              <div class="project-name">
+                Project Name
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-4 col-sm-6">
+        <a href="{{ site.baseurl }}public/img/portfolio/fullsize/6.jpg" class="portfolio-box">
+          <img src="{{ site.baseurl }}public/img/portfolio/thumbnails/6.jpg" class="img-responsive" alt="">
+          <div class="portfolio-box-caption">
+            <div class="portfolio-box-caption-content">
+              <div class="project-category text-faded">
+                Category
+              </div>
+              <div class="project-name">
+                Project Name
+              </div>
+            </div>
+          </div>
+        </a>
+      </div> -->
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 text-center">
+        <h2 class="section-heading">Let's Get In Touch!</h2>
+        <hr class="primary">
+        <p>Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+      </div>
+      <div class="col-lg-8 col-lg-offset-2 text-center">
+        <i class="fa fa-envelope-o fa-3x sr-contact"></i>
+        <p><a href="mailto:your-email@your-domain.com">stu@sitkadigital.com</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- jQuery -->
+<script src="{{ site.baseurl }}public/vendor/jquery/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="{{ site.baseurl }}public/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="{{ site.baseurl }}public/vendor/scrollreveal/scrollreveal.min.js"></script>
+<script src="{{ site.baseurl }}public/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+<!-- Theme JavaScript -->
+<script src="{{ site.baseurl }}public/js/creative.min.js"></script>
